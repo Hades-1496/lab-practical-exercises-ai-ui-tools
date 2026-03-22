@@ -99,7 +99,9 @@ Learn how to present and defend your website in no more than 5 minutes.
 ### Questions:
 
 - When should developers rely on AI tools?
+    Commanding simple tasks, elaborating well argumented prompts to specify the developer's desire. Fixing erros and suggesting improvements. You can also clean the code to make it easer to read.
 - What risks exist in AI‑generated code?
+    Bad prompting 
 - Why is client‑server architecture essential for web apps?
 
 ### Key takeaways

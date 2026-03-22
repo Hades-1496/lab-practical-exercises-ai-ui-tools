@@ -1,0 +1,179 @@
+/* CSS RESET - do not remove */
+/* Reset default browser styles and provide a consistent starting point */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --container: 820px;
+  --bg: #ffffff;
+  --text: #333333;
+  --muted: #777777;
+  --accent: #e6e6e6;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* use the existing <img> as background */
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* dark overlay for contrast */
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+  z-index: 1;
+}
+
+.hero h1{
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-weight: 300;
+  font-size: 72px;
+  letter-spacing: 1px;
+  margin: 0 20px;
+  line-height: 1;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+/* MAIN LAYOUT */
+main {
+  max-width: var(--container);
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+/* Recipe container */
+.recipe {
+  background: transparent;
+}
+
+/* Intro paragraph centered and narrow like the mock */
+.intro p {
+  max-width: 760px;
+  margin: 28px auto;
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.9;
+  text-align: center;
+}
+
+/* Separator styling (replace <hr />) */
+hr {
+  border: none;
+  height: 1px;
+  background: var(--accent);
+  margin: 36px 0;
+}
+
+/* Sections */
+.ingredients,
+.directions {
+  padding: 12px 6px;
+}
+
+/* Headings inside sections */
+.ingredients h2,
+.directions h2 {
+  font-size: 18px;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* Ingredients list: compact, with simple dash marker */
+.ingredients ul {
+  list-style: none;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.ingredients li {
+  position: relative;
+  padding-left: 28px;
+  margin: 8px 0;
+  color: #4b4b4b;
+  font-size: 15px;
+}
+
+/* dash marker before each li */
+.ingredients li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #9a9a9a;
+  font-weight: 600;
+}
+
+/* Directions: numbered steps with spacing */
+.directions ol {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+.directions ol li {
+  margin: 14px 0;
+  color: #4b4b4b;
+  font-size: 15px;
+  text-align: left;
+}
+
+/* Small utility spacing for wide screens */
+@media (min-width: 1000px) {
+  .hero { height: 520px; }
+  .hero h1 { font-size: 96px; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+  .hero { height: 320px; }
+  .hero h1 { font-size: 48px; }
+  .intro p { font-size: 16px; padding: 0 10px; }
+  main { margin: 28px auto; }
+}
+
+@media (max-width: 420px) {
+  .hero { height: 260px; }
+  .hero h1 { font-size: 32px; }
+  .ingredients li,
+  .directions ol li { font-size: 14px; }
+}
